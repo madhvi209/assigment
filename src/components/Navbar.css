@@ -1,0 +1,161 @@
+/* Navbar Container - Stacks logo on top of links */
+.navbar {
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  align-items: center;    /* Center horizontally */
+  padding: 40px 20px 20px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.logo-container {
+  margin-bottom: 30px; /* Space between logo and links */
+}
+
+.logo {
+  height: 60px; 
+  display: block;
+}
+
+/* Navigation Links List */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 75px; /* Increased spacing between nav items */
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.nav-item:hover {
+  color: var(--primary-blue);
+}
+
+/* Dropdown Arrow Icon */
+.has-dropdown::after {
+  content: '';
+  display: inline-block;
+  margin-left: 8px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #666; /* Arrow thickness */
+  border-bottom: 2px solid #666;
+  transform: rotate(45deg); /* Creates the V shape */
+  margin-top: -4px; /* Alignment tweak */
+}
+
+/* --- START OF YOUR ORIGINAL CODE (UNTOUCHED) --- */
+
+/* Navbar Container - Stacks logo on top of links */
+.navbar {
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  align-items: center;    /* Center horizontally */
+  padding: 40px 20px 20px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.logo-container {
+  margin-bottom: 30px; /* Space between logo and links */
+}
+
+.logo {
+  height: 60px; 
+  display: block;
+}
+
+/* Navigation Links List */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 75px; /* Increased spacing between nav items */
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.nav-item:hover {
+  color: var(--primary-blue);
+}
+
+/* Dropdown Arrow Icon */
+.has-dropdown::after {
+  content: '';
+  display: inline-block;
+  margin-left: 8px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #666; /* Arrow thickness */
+  border-bottom: 2px solid #666;
+  transform: rotate(45deg); /* Creates the V shape */
+  margin-top: -4px; /* Alignment tweak */
+}
+
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 35px; /* Shrinks the gap to prevent horizontal overflow */
+  }
+}
+
+/* Refinements for Tablets and Mobile (768px and below) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 30px 15px 15px 15px; /* Slightly tighter padding */
+  }
+  
+  .logo-container {
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    height: 50px; /* Smaller logo for smaller screens */
+  }
+
+  .nav-links {
+    flex-wrap: wrap;      /* Allows links to flow to a second line if needed */
+    justify-content: center;
+    gap: 15px 25px;       /* row-gap column-gap */
+    max-width: 100%;
+  }
+
+  .nav-item {
+    font-size: 14px;      /* Slightly smaller text */
+  }
+}
+
+/* Refinements for Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 12px 18px;       /* Even tighter spacing for small phones */
+  }
+
+  .nav-item {
+    font-size: 13px;
+  }
+
+  /* Increase arrow size slightly relative to text for better visibility */
+  .has-dropdown::after {
+    width: 6px;
+    height: 6px;
+    margin-left: 5px;
+  }
+}

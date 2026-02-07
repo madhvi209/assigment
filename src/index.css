@@ -1,0 +1,122 @@
+:root {
+  --primary-blue: #0081ff;
+  --text-dark: #333;
+  --text-light: #666;
+  --bg-white: #ffffff;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --features-bg:#f5f7fa;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+h1, h2 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 40px;
+}
+.hero-content { flex: 1; }
+.hero-image { flex: 1; position: relative; }
+.btn-primary {
+  background: var(--primary-blue);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 129, 255, 0.3);
+}
+
+/* Card Grids */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+/* Illustration Section (Page 3) */
+.illustration-box img {
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 20px;
+}
+
+/* Testimonials (Page 2) */
+.testimonial-container {
+  background: #f9f9f9;
+  padding: 40px;
+  border-radius: 20px;
+  position: relative;
+}
+.testimonial-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Logos Section */
+.logo-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+.logo-item img {
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+/* Footer (Page 1) */
+.dark-footer {
+  background: #000;
+  color: white;
+  padding: 40px 0;
+  margin-top: 100px;
+}

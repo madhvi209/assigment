@@ -1,0 +1,76 @@
+.logo-showcase {
+  padding: 100px 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.logo-showcase .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-heading {
+  font-size: 32px;
+  font-weight: 800; /* Extra bold to match the image */
+  color: #000;
+  margin-bottom: 80px;
+  letter-spacing: -0.5px;
+}
+
+.logo-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 250px;
+}
+
+.img-wrapper {
+  height: 100px; /* Uniform height for logo alignment */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.img-wrapper img {
+  max-width: 200px;
+  max-height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect to make it feel interactive */
+.logo-item:hover img {
+  transform: scale(1.05);
+}
+
+.logo-label {
+  font-size: 16px;
+  font-weight: 700; /* Matches the bold text below the logos */
+  color: #000;
+  margin: 0;
+  margin-top: -40px; /* Equivalent to -mt-10 in Tailwind (10*4=40px) */
+}
+
+/* Responsive: Stack items on mobile */
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 24px;
+    margin-bottom: 50px;
+  }
+  
+  .logo-grid {
+    flex-direction: column;
+    gap: 60px;
+  }
+}

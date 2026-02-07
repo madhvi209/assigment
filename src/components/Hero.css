@@ -1,0 +1,229 @@
+/* Hero Section Main Wrapper */
+.hero-section {
+  position: relative;
+  background-color: #ffffff;
+  padding: 0 0 25px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  min-height: 70vh;
+}
+
+/* Centered Layout Container */
+.hero-section .container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  gap: 40px;
+  z-index: 2;
+}
+
+/* Left Content Column */
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+  margin-top: 0;
+  padding-top: 85px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-content h1 {
+  font-size: 37px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #111;
+  margin-bottom: 20px;
+  margin-top: 0;
+  letter-spacing: -1px;
+  text-align: left;
+  width: 100%;
+}
+
+.hero-content p {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.35;
+  color: #23282e;
+  margin-top: 20px;
+  margin-bottom: 26px;
+  max-width: 625px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  text-align: left;
+  word-spacing: 1px;
+  width: 100%;
+}
+
+/* The "Check Pricing" Button */
+.btn-pricing {
+  display: inline-block;
+  background-color: #1a97f5;
+  color: #ffffff;
+  padding: 15px 38px;
+  font-size: 19px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 20px rgba(26, 151, 245, 0.26);
+  margin-top: 0;
+  align-self: flex-start;
+}
+
+.btn-pricing:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(26, 151, 245, 0.33);
+}
+
+/* Right Illustration Column */
+.hero-graphics {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-graphics img {
+  max-width: 100%;
+  height: auto;
+  animation: float 6s ease-in-out infinite;
+  margin-top: 0;
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin-bottom: -45px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.wave-bottom {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 2; 
+}
+
+.wave-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 120px;
+}
+
+.wave-bottom path {
+  fill: #f5f7fa;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-13px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+  .hero-section {
+    padding: 0 0 0px 0;
+    min-height: unset;
+  }
+  .hero-section .container {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 0;
+    gap: 27px;
+  }
+
+  .hero-content {
+    padding-top: 18px;
+    align-items: center;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+    margin-top: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+    margin: 0 auto 18px;
+    max-width: 98vw;
+    text-align: center;
+    margin-top: 13px;
+    width: 100%;
+  }
+
+  .btn-pricing {
+    align-self: center;
+  }
+
+  .hero-graphics {
+    margin-top: 0;
+    justify-content: center;
+  }
+
+  .hero-graphics img {
+    margin-bottom: -24px;
+  }
+
+  .wave-bottom {
+    bottom: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 40px; /* Adds breathing room when stacked */
+  }
+  .hero-content h1 {
+    font-size: 28px;
+    padding: 0 10px;
+  }
+  .hero-content p {
+    max-width: 90%;
+    line-height: 1.5;
+  }
+  .hero-graphics img {
+    max-width: 85%; /* Prevents image from taking too much vertical space on phones */
+  }
+  .wave-bottom svg {
+    height: 80px; /* Scales wave height for mobile */
+  }
+}
+
+/* Refinements for Small Phones (480px and below) */
+@media (max-width: 480px) {
+  .hero-section {
+    padding-top: 30px;
+  }
+  .hero-content h1 {
+    font-size: 24px;
+    letter-spacing: -0.5px;
+  }
+  .hero-content p {
+    font-size: 15px;
+  }
+  .btn-pricing {
+    width: 90%; /* Larger tap target for very small phones */
+    padding: 14px 20px;
+    font-size: 17px;
+  }
+  .hero-graphics img {
+    max-width: 95%;
+    margin-bottom: -15px; /* Tighter fit for mobile */
+  }
+  .wave-bottom svg {
+    height: 60px;
+  }
+}

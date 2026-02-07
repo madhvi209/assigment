@@ -1,0 +1,117 @@
+
+:root {
+  --primary-blue: #0081ff;
+  --text-dark: #333;
+  --text-light: #666;
+  --bg-white: #ffffff;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --features-bg: #f5f7fa;
+}
+
+/* 2. Global resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-white);
+}
+
+.features-section {
+  background-color: var(--features-bg);
+  padding: 0px 0;
+  font-family: 'Segoe UI Semibold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 0px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.main-title,
+.features-section h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #111; /* Dark text for contrast on light bg */
+  margin-bottom: 40px;
+  text-align: center;
+  width: 100%;
+  font-family: 'Segoe UI Semibold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.card-title,
+.feature-card h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Segoe UI Semibold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card,
+.feature-card {
+  background: var(--bg-white);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  text-align: left;
+  transition: transform 0.2s;
+  font-family: 'Segoe UI Semibold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  color: #333;
+}
+
+.card:hover,
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-description,
+.feature-card p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  text-align: left;
+  font-weight: 600;
+  font-family: 'Segoe UI Semibold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.illustration-box img {
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 32px 6vw;
+  }
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 24px;
+  }
+  .card, .feature-card {
+    padding: 22px 10px;
+  }
+  .card-title,
+  .feature-card h4 {
+    text-align: center;
+  }
+}
