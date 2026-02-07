@@ -1,5 +1,6 @@
 import React from 'react';
 import './Testimonials.css';
+import badgeImage from '/src/assets/star.png';
 
 export default function Testimonials() {
     const data = [
@@ -8,8 +9,8 @@ export default function Testimonials() {
         { name: "Sam Cooper", role: "Customer Service Manager", img: "https://i.pravatar.cc/100?u=3" }
     ];
 
-    // Replace this URL with your preferred image for the badge
-    const badgeImageUrl = "/src/assets/star.png"; // Example: gold star
+    // Use imported image to ensure correct display on Vercel and other build platforms
+    const badgeImageUrl = badgeImage;
 
     return (
         <section className="testimonials-wrapper">
