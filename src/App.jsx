@@ -1,8 +1,5 @@
 import React from 'react';
 import './index.css';
-
-import electroNeek from './assets/electroNeek.png';
-import jotForm from './assets/jotform.png';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import FeatureSection from './components/FeatureSection';
@@ -11,9 +8,6 @@ import FeatureGrid from './components/FeatureGrid';
 import Testimonials from './components/Testimonials';
 import LogoSection from './components/LogoSection';
 
-// Placeholder image URLs to substitute missing assets
-const placeholderLogo = 'https://via.placeholder.com/120x40?text=Logo+Placeholder';
-const user1 = 'https://via.placeholder.com/40?text=User';
 
 const App = () => {
   const loremText =
