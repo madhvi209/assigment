@@ -1,29 +1,29 @@
-/* Navbar Container - Stacks logo on top of links */
 .navbar {
   display: flex;
-  flex-direction: column; /* Stack vertically */
-  align-items: center;    /* Center horizontally */
+  flex-direction: column;
+  align-items: center;
   padding: 40px 20px 20px 20px;
   background-color: #fff;
   border-bottom: 1px solid #e0e0e0;
+  position: relative;
 }
 
 .logo-container {
-  margin-bottom: 30px; /* Space between logo and links */
+  margin-bottom: 30px;
 }
 
 .logo {
-  height: 60px; 
+  height: 60px;
   display: block;
 }
 
-/* Navigation Links List */
 .nav-links {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 75px; /* Increased spacing between nav items */
+  gap: 75px;
+  transition: max-height 0.3s, opacity 0.3s;
 }
 
 .nav-item {
@@ -40,119 +40,122 @@
   color: var(--primary-blue);
 }
 
-/* Dropdown Arrow Icon */
 .has-dropdown::after {
   content: '';
   display: inline-block;
   margin-left: 8px;
   width: 8px;
   height: 8px;
-  border-right: 2px solid #666; /* Arrow thickness */
+  border-right: 2px solid #666;
   border-bottom: 2px solid #666;
-  transform: rotate(45deg); /* Creates the V shape */
-  margin-top: -4px; /* Alignment tweak */
+  transform: rotate(45deg);
+  margin-top: -4px;
 }
 
-/* --- START OF YOUR ORIGINAL CODE (UNTOUCHED) --- */
-
-/* Navbar Container - Stacks logo on top of links */
-.navbar {
-  display: flex;
-  flex-direction: column; /* Stack vertically */
-  align-items: center;    /* Center horizontally */
-  padding: 40px 20px 20px 20px;
-  background-color: #fff;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.logo-container {
-  margin-bottom: 30px; /* Space between logo and links */
-}
-
-.logo {
-  height: 60px; 
-  display: block;
-}
-
-/* Navigation Links List */
-.nav-links {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 75px; /* Increased spacing between nav items */
-}
-
-.nav-item {
-  text-decoration: none;
-  color: #000;
-  font-weight: 500;
-  font-size: 16px;
-  display: flex;
+.navbar-hamburger {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  transition: color 0.2s;
+  padding: 0;
 }
 
-.nav-item:hover {
-  color: var(--primary-blue);
-}
-
-/* Dropdown Arrow Icon */
-.has-dropdown::after {
-  content: '';
-  display: inline-block;
-  margin-left: 8px;
-  width: 8px;
-  height: 8px;
-  border-right: 2px solid #666; /* Arrow thickness */
-  border-bottom: 2px solid #666;
-  transform: rotate(45deg); /* Creates the V shape */
-  margin-top: -4px; /* Alignment tweak */
+.navbar-hamburger span {
+  display: block;
+  height: 3px;
+  width: 28px;
+  margin: 4px 0;
+  background: #000;
+  border-radius: 2px;
+  transition: 0.3s;
 }
 
 @media (max-width: 1024px) {
   .nav-links {
-    gap: 35px; /* Shrinks the gap to prevent horizontal overflow */
+    gap: 35px;
   }
 }
 
-/* Refinements for Tablets and Mobile (768px and below) */
 @media (max-width: 768px) {
   .navbar {
-    padding: 30px 15px 15px 15px; /* Slightly tighter padding */
+    padding: 30px 15px 15px 15px;
   }
-  
   .logo-container {
     margin-bottom: 20px;
   }
-
   .logo {
-    height: 50px; /* Smaller logo for smaller screens */
+    height: 50px;
   }
-
   .nav-links {
-    flex-wrap: wrap;      /* Allows links to flow to a second line if needed */
+    gap: 15px 25px;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 15px 25px;       /* row-gap column-gap */
     max-width: 100%;
+    transition: max-height 0.3s, opacity 0.3s;
   }
-
   .nav-item {
-    font-size: 14px;      /* Slightly smaller text */
+    font-size: 14px;
   }
 }
 
-/* Refinements for Small Mobile (480px and below) */
+@media (max-width: 600px) {
+  .navbar-hamburger {
+    display: flex;
+  }
+  .nav-links {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    width: 100vw;
+    z-index: 11;
+    transition: max-height 0.35s cubic-bezier(0.4,0.0,0.2,1), opacity 0.28s;
+    pointer-events: none;
+  }
+  .nav-links.open {
+    max-height: 520px;
+    opacity: 1;
+    pointer-events: auto;
+    gap: 0;
+  }
+  .nav-item {
+    width: 100%;
+    justify-content: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 17px;
+  }
+  .nav-item:last-child {
+    border-bottom: none;
+  }
+}
+
 @media (max-width: 480px) {
   .nav-links {
-    gap: 12px 18px;       /* Even tighter spacing for small phones */
+    gap: 12px 18px;
   }
-
   .nav-item {
     font-size: 13px;
   }
-
-  /* Increase arrow size slightly relative to text for better visibility */
   .has-dropdown::after {
     width: 6px;
     height: 6px;

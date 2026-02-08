@@ -1,20 +1,30 @@
+/* --- Sea Wave Top Structure for About Section --- */
 .features-section {
   position: relative;
-  padding: 100px 0;
+  padding: 0 0 100px 100px;
   background-color: #fff;
   overflow: hidden;
 }
 
-.features-curve-bg {
+.features-wave-top {
   position: absolute;
-  top: 15%; 
+  top: 0;
   left: 0;
   width: 100%;
-  height: 400px; 
-  background-color: #f5f7fa; 
-  z-index: 1;
-  clip-path: ellipse(80% 50% at 50% 100%);
-  opacity: 0.7;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 2; 
+}
+
+.features-wave-top svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 420px;
+}
+
+.features-wave-top path {
+  fill: #f5f7fa;
 }
 
 .features-section .container {
@@ -22,7 +32,8 @@
   z-index: 2; 
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 40px 20px;
+  padding-top: 54px;
 }
 
 .features-main-title {
@@ -75,7 +86,7 @@
   text-align: left;
 }
 
-
+/* Hide the curve bg (legacy) if present and responsive wave adjustments */
 @media (max-width: 992px) {
   .features-grid {
     grid-template-columns: 1fr;
@@ -93,5 +104,78 @@
   
   .features-curve-bg {
     display: none; 
+  }
+
+  .features-wave-top svg {
+    height: 150px; /* Responsive wave height */
+  }
+}
+
+/* Center all About section content on small screens */
+@media (max-width: 768px) {
+  .features-section {
+    padding: 0 0 60px 0; /* Remove side padding for mobile */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .features-section .container {
+    padding-top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .features-main-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+  }
+  .features-grid {
+    width: 100%;
+  }
+  .features-wave-top svg {
+    height: 60px;
+  }
+  .feature-card {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .feature-item-title, .feature-item-desc {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-section .container {
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .features-main-title {
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  .features-wave-top svg {
+    height: 40px;
+  }
+  .features-grid {
+    width: 100%;
+  }
+  .feature-card {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .feature-item-title, .feature-item-desc {
+    text-align: center;
+    width: 100%;
   }
 }
